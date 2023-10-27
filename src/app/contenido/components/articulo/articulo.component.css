@@ -1,0 +1,50 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;    
+}
+
+.article {
+    background-color:rgb(255, 255, 255);
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.603);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    margin: 10px; /* Espacio entre los divs, ajusta según tus preferencias */
+    width: 579px; /* Ancho de cada artículo, ajusta según tus necesidades */
+    vertical-align: top;
+    height: 100%;
+}
+.article img {
+    width: 300px;
+    object-fit: cover;
+}
+.article h2 {
+    font-size: 130%;
+    margin: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.article-image, .article-title {
+    display: inline-block;
+    height: 100%;
+    text-align: center; /* Centra el texto horizontalmente */
+    transition: background-color 0.3s, color 0.3s;
+
+}
+
+.article-title {
+    display: flex; /* Activa el modelo flexbox */
+    justify-content: center; /* Alinea horizontalmente el contenido */
+    align-items: center; /* Alinea verticalmente el contenido */
+}
+
+.article-container {
+    text-align: center; /* Alinea los elementos al centro, opcional */
+    height: 290px;
+}
+
+.article-title:hover {
+    background-color:black; /* Cambia el fondo cuando se pasa el mouse */
+    color: #fff; /* Cambia el color del texto cuando se pasa el mouse */
+}

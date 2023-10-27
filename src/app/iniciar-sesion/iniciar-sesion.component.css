@@ -1,0 +1,123 @@
+/* Estilos CSS */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#cerrar{
+    background-color: white;
+    border-radius: 3px;
+    width: 7%;
+}
+
+.login-container {
+    position: relative; /* Agrega esta línea */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    height: 90%;
+    width: 40%;
+    box-shadow: 0px 0px 30px grey;
+}
+
+form {
+    text-align: center;
+}
+
+.form-group {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+button {
+
+    cursor: pointer;
+    padding: 8px;
+    width: 105%;
+    border-color: transparent;
+    font-size: 16px;
+    
+}
+
+.social-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Alineación horizontal centrada */
+    width: 310px;
+}
+
+#facebook{
+    background-color: rgb(30, 144, 255);
+    color: white;
+    margin: 10px 0px 10px 20px;
+    border: 2px;
+}
+
+#acceder{
+    background-color: rgb(220, 20, 60);
+    color: white;
+    border: 2px;
+    
+}
+#bienvenida1{
+    font-size: 32px;
+    margin: 0px 0px 5px 0px;
+}
+
+#bienvenida2{
+    font-size: 26px;
+    margin: 0px 20px 0px 20px ;
+}
+
+label{
+    float:left;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+p{
+    font-size: 13px;
+    margin: 5px 0px 5px 0px;
+}
+
+#cerrar{
+    position: absolute;
+    top: 10px; /* Ajusta la posición vertical según tu preferencia */
+    right: 10px; /* Ajusta la posición horizontal según tu preferencia */
+    background-color: white; 
+    border: none;
+    
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; 
+}
+
+#google{
+    margin: 0px 0px 0px 20px;
+}

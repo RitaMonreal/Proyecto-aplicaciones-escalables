@@ -1,0 +1,48 @@
+/* Estilos CSS */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.banner {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-button {
+    margin-left: 15px;
+}
+
+.logo {
+    width: 150px;
+    height: 35px;
+    background-image: url(../../assets/purgatorioLogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 10px;
+    
+}
+
+.action-buttons {
+    display: flex;
+}
+
+/* Agrega estos estilos para el estado :hover */
+.action-button:hover {
+    background-color: rgba(155, 4, 4, 0.897); /* Cambia el color a naranja cuando el mouse pasa por encima */
+    cursor: pointer; /* Cambia el cursor a una mano señalando cuando el mouse pasa por encima */
+}
+
+
+.action-button {
+    padding: 10px 15px;
+    color: white;
+}
+
+#iniciar-sesion {
+    margin-left: 10px; /* Espacio entre los botones */
+    /*margin-right: 10px;*/
+}
