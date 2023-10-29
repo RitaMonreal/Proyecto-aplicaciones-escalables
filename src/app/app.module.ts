@@ -8,6 +8,8 @@ import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.componen
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ContenidoModule } from './contenido/contenido.module';
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
@@ -16,12 +18,13 @@ import { ContenidoModule } from './contenido/contenido.module';
     BannerSuperiorUnrComponent,
     IniciarSesionComponent,
     CrearCuentaComponent,
-    NotFoundComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ContenidoModule
+    ContenidoModule, 
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
