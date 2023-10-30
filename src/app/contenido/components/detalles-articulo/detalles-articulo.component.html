@@ -1,20 +1,9 @@
-
 <div class="container">
   <div *ngIf="articulo">
-    <div class="article">
-      <div class="article-image">
-        <img src="{{ articulo.image }}" alt="{{ articulo.titulo }}">
-      </div>
-      <div class="article-title">
-        <h2>{{ articulo.titulo }}</h2>
-      </div>
-      <div class="article-body">
-        <p>{{ articulo.cuerpo_articulo }}</p>
-      </div>
-      <div class="article-details">
-        <p>Categoría: {{ articulo.categoria }}</p>
-        <p>Autor: {{ articulo.autor }}</p>
-      </div>
-    </div>
+    <h2>{{ articulo.titulo }}</h2>
+    <img [src]="articulo.image" alt="{{ articulo.titulo }}">
+    <p>{{ articulo.cuerpo_articulo }}</p>
+    <p>Categoría: {{ articulo.categoria }}</p>
+    <p>Autor: {{ articulo.autor }}</p>
   </div>
 </div>

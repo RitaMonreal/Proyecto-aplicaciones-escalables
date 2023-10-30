@@ -24,10 +24,8 @@ export class ArticuloComponent {
     "autor": "Harry Styles"
   }
 
-  public mostrarArticulo(): void {
-    this.contenidoService.obtenerArticuloPorId(this.articulo.id_articulo);
-    console.log('ID del artículo:', this.articulo.id_articulo); 
-    this.router.navigate(['detalles-articulo', this.articulo.id_articulo]);
+  irADetalles(id: number): void {
+    this.router.navigate(['/detalles-articulo', id]);
   }
 
 }

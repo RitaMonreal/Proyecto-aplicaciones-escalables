@@ -10,11 +10,11 @@ const routes: Routes = [
   {path: "iniciar_sesion", component: IniciarSesionComponent},
   {path: "crear_cuenta", component: CrearCuentaComponent},
   { path: "pagina_principal", component: ContenidoPage },
-  /*{path: "", component: Caricaturas2Page},*/
+  {path: "detalles-articulo/:id", component: DetallesArticuloComponent},
   {path: "", redirectTo: "pagina_principal", pathMatch: "full"},
   {path: "not-found", component: NotFoundComponent},
   {path: "**", redirectTo: "not-found", pathMatch: "full"},
-  {path: 'detalles-articulo/:id', component: DetallesArticuloComponent},
+ 
 
 ];
 
