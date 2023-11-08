@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>  
+    <div class="paginaWeb" style="min-height: 460px;">
+        
+
+        <div id ="contenedorPublic">
+       
+            <h1>Agregar Publicación</h1>
+
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <br>
+                <input type="text" id="titulo_publicacion_nueva" name="titulo_publicacion_nueva" required>
+            </div>
+
+            <div class="form-group">
+                <label for="texto">Contenido de la publicación:</label>
+                <br>
+                <textarea id="texto_publicacion_nueva" name="texto_publicacion_nueva" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen_publicacion_nueva" name="imagen_publicacion_nueva">
+            </div>
+
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="categoria1">Cine</option>
+                    <option value="categoria2">Música</option>
+                    <option value="categoria3">Varios</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Agregar Publicación">
+            </div>
+    
+        
+      
+         </div>
+        
+    </div>
+     
+</body>
+
+</html>
