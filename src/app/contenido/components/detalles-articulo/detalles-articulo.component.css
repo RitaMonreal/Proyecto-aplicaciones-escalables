@@ -1,18 +1,49 @@
-body {
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
     font-family: Arial, sans-serif;
-}
+    display: flex;
+    justify-content: space-between;
+  }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
+  .article {
+    flex: 2;
+    margin-right: 20px;
+  }
 
-img {
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+  }
+
+  img {
     max-width: 100%;
     height: auto;
-}
+    border: 2px solid #ccc;
+    margin: 10px 0;
+  }
 
-article {
-    margin: 20px;
-}
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .categoria {
+    font-weight: bold;
+  }
+
+  .autor {
+    font-style: italic;
+  }
+
+  .sugerencias {
+    flex: 1;
+    background-color: #f3f3f3;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }

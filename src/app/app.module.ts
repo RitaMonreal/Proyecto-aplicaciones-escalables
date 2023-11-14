@@ -26,7 +26,7 @@ import { FormularioNuevaPublicacionComponent } from './formulario-nueva-publicac
     AppRoutingModule,
     ContenidoModule, 
     RouterModule,
-    CommonModule // Asegúrate de importar CommonModule aquí
+    CommonModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

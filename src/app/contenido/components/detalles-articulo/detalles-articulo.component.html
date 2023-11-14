@@ -1,9 +1,20 @@
 <div class="container">
-  <div *ngIf="articulo">
-    <h2>{{ articulo.titulo }}</h2>
-    <img [src]="articulo.image" alt="{{ articulo.titulo }}">
-    <p>{{ articulo.cuerpo_articulo }}</p>
-    <p>Categoría: {{ articulo.categoria }}</p>
-    <p>Autor: {{ articulo.autor }}</p>
+  <div class="article">
+    <div *ngIf="articulo">
+      <h2>{{ articulo.titulo }}</h2>
+      <img [src]="articulo.image" alt="{{ articulo.titulo }}">
+      <p>{{ articulo.cuerpo_articulo }}</p>
+      <p><span class="categoria">Categoría:</span> {{ articulo.categoria }}</p>
+      <p><span class="autor">Autor:</span> {{ articulo.autor }}</p>
+    </div>
+  </div>
+  <div class="sugerencias">
+    <!-- Aquí puedes colocar tus sugerencias de artículos -->
+    <h3>Sugerencias de Artículos</h3>
+    <ul>
+      <li><a href="#">Artículo 1</a></li>
+      <li><a href="#">Artículo 2</a></li>
+      <li><a href="#">Artículo 3</a></li>
+    </ul>
   </div>
 </div>
