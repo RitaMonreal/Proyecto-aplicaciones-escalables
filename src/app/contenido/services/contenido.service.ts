@@ -36,12 +36,24 @@ export class ContenidoService{
           "categoria": 2,
           "autor": "Rita Monreal"
         },
+        {
+          "id_articulo": 5,
+          "titulo": "Harry Styles",
+          "image": "https://media.vogue.mx/photos/63e05053ebfc2cfe7ab13988/1:1/w_775%2Cc_limit/harry-stlyes-grammys-2023.jpg",
+          "cuerpo_articulo": " Anne Hathaway, la actriz ganadora del premio de la Academia, ha demostrado a lo largo de los años su talento y versatilidad en la industria del cine. Sin embargo, también ha dejado una marca significativa en el mundo de la moda. Con su elegancia, estilo único y capacidad para lucir cualquier atuendo con gracia y sofisticación, Hathaway se ha convertido en un verdadero icono de la moda. Ya sea en alfombras rojas, eventos de moda o simplemente en su día a día, Anne Hathaway siempre logra cautivar con su impecable sentido del estilo. Su elección de prendas y accesorios refleja su personalidad creativa y audaz, demostrando su capacidad para arriesgarse y experimentar con diferentes tendencias y estilos. Además, Hathaway es reconocida por su apoyo a diseñadores emergentes y su compromiso con la sostenibilidad en la moda. Ha utilizado su influencia para promover marcas éticas y eco-friendly, destacando la importancia de la moda responsable. En resumen, Anne Hathaway se ha ganado su lugar como un verdadero ícono de la moda, no solo por su talento actoral, sino también por su estilo distintivo y su compromiso con la industria de la moda sostenible. Su impacto perdurará como una referencia para futuras generaciones de amantes de la moda.",
+          "categoria": 2,
+          "autor": "Rita Monreal"
+        },
         
       ];
       
       obtenerArticuloPorId(id: number): articulo | undefined {
-        // Utiliza el método find para buscar el artículo por su ID
+  
         return this.articulos.find(articulo => articulo.id_articulo === id);
+      }
+
+      getSugerencias(id: number): articulo[] {
+        return this.articulos.filter(articulo => articulo.id_articulo !== id).slice(0, 3);
       }
 
       

@@ -1,0 +1,11 @@
+.articulos-sugeridos-container {
+    display: flex;
+    justify-content: space-between; 
+  }
+  
+  .articulo-sugerido {
+    width: 30%; 
+    margin: 10px; 
+
+  }
+  

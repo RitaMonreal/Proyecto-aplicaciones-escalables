@@ -30,10 +30,9 @@ body {
     display: flex;
 }
 
-/* Agrega estos estilos para el estado :hover */
 .action-button:hover {
-    background-color: rgba(155, 4, 4, 0.897); /* Cambia el color a naranja cuando el mouse pasa por encima */
-    cursor: pointer; /* Cambia el cursor a una mano señalando cuando el mouse pasa por encima */
+    background-color: rgba(155, 4, 4, 0.897); 
+    cursor: pointer; 
 }
 
 
@@ -43,6 +42,5 @@ body {
 }
 
 #iniciar-sesion {
-    margin-left: 10px; /* Espacio entre los botones */
-    /*margin-right: 10px;*/
+    margin-left: 10px; 
 }

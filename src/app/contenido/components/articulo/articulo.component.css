@@ -10,8 +10,8 @@ body {
     border-radius: 5px;
     overflow: hidden;
     display: flex;
-    margin: 10px; /* Espacio entre los divs, ajusta según tus preferencias */
-    width: 579px; /* Ancho de cada artículo, ajusta según tus necesidades */
+    margin: 10px; 
+    width: 579px; 
     vertical-align: top;
     height: 100%;
 }
@@ -28,23 +28,23 @@ body {
 .article-image, .article-title {
     display: inline-block;
     height: 100%;
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center;
     transition: background-color 0.3s, color 0.3s;
 
 }
 
 .article-title {
-    display: flex; /* Activa el modelo flexbox */
-    justify-content: center; /* Alinea horizontalmente el contenido */
-    align-items: center; /* Alinea verticalmente el contenido */
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
 }
 
 .article-container {
-    text-align: center; /* Alinea los elementos al centro, opcional */
+    text-align: center; 
     height: 290px;
 }
 
 .article-title:hover {
-    background-color:black; /* Cambia el fondo cuando se pasa el mouse */
-    color: #fff; /* Cambia el color del texto cuando se pasa el mouse */
+    background-color:black; 
+    color: #fff; 
 }
