@@ -5,12 +5,12 @@
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 }
 
 .article {
-  flex: 2;
+  flex-basis: 70%; /* Ajusta el ancho del artículo principal */
   margin-right: 20px;
 }
 
@@ -45,10 +45,19 @@ p {
   font-style: italic;
 }
 
-.sugerencias {
-  flex: 1;
-  padding: 20px;
-  border-radius: 5px;
-  width: 714px;
-  height: 100px;
+
+.sugerencias-container {
+  background-color: #000000; /* Fondo en tono claro de rojo */
+  border: 5px solid rgba(155, 4, 4, 0.897); /* Borde en rojo */
+  
+  padding: 10px;
+  margin-top: 20px;
+  width: 250px;
+}
+
+.sugerencias-title {
+  font-size: 1.5em; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  color: #ffffff; /* Color del texto en rojo */
+  text-align: center;
 }

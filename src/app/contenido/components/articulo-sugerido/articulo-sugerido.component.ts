@@ -12,7 +12,6 @@ export class ArticuloSugeridoComponent {
   constructor(private contenidoService: ContenidoService, private router: Router) { }
 
 
-
   @Input()
   public articulo : articulo = {
     "id_articulo": 1,

@@ -1,24 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ContenidoService } from '../../services/contenido.service';
+import { articulo } from '../../interfaces/contenido.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-articulos-sugeridos',
   templateUrl: './articulos-sugeridos.component.html',
   styleUrls: ['./articulos-sugeridos.component.css']
 })
-export class ArticulosSugeridosComponent implements OnInit {
-  @Input() articuloId?: number;
-  articulosSugeridos: any[] = [];
+export class ArticulosSugeridosComponent {
+  constructor(private contenidoService: ContenidoService, private router: Router) {}
 
-  constructor(private contenidoService: ContenidoService) {}
-
-  
-
-  ngOnInit(): void {
-    if (this.articuloId) {
-      this.articulosSugeridos = this.contenidoService.getSugerencias(this.articuloId);
-    }
+  public get articulos(): articulo[] {
+    return this.contenidoService.articulos;
   }
-
-
 }

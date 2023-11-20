@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { articulo } from "../interfaces/contenido.interface";
+import { Observable, of } from "rxjs";
 
 @Injectable({providedIn: "root"})
 export class ContenidoService{
@@ -47,14 +48,13 @@ export class ContenidoService{
         
       ];
       
-      obtenerArticuloPorId(id: number): articulo | undefined {
-  
-        return this.articulos.find(articulo => articulo.id_articulo === id);
+      obtenerArticuloPorId(id: number): Observable<articulo | undefined> {
+        const articuloEncontrado = this.articulos.find(
+          (articulo) => articulo.id_articulo === id
+        );
+        return of(articuloEncontrado);
       }
-
-      getSugerencias(id: number): articulo[] {
-        return this.articulos.filter(articulo => articulo.id_articulo !== id).slice(0, 3);
-      }
+     
+}
 
       
-}
