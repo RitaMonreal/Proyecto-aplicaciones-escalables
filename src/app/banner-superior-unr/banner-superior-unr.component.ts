@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./banner-superior-unr.component.css']
 })
 export class BannerSuperiorUnrComponent {
+  isMenuOpen: boolean = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 }

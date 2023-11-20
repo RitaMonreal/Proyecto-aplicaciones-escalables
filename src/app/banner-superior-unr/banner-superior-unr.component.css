@@ -44,3 +44,71 @@ body {
 #iniciar-sesion {
     margin-left: 10px; 
 }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Inicialmente oculto fuera del área visible */
+    width: 25%; /* Ajusta según tus necesidades */
+    height: 100vh;
+    background-color: #000000; /* Color de fondo para el menú */
+    transition: left 0.3s ease; /* Agrega una transición suave */
+    z-index: 1000; /* Asegura que el menú esté en la capa superior */
+  }
+  
+  .menu-open {
+    left: 0; /* Muestra el menú al desplazarlo hacia la derecha */
+  }
+  
+  .menu button#cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #929292;
+  }
+  
+  .menu .search-bar {
+    padding: 20px;
+  }
+  
+  .menu .search-bar input {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .menu .search-bar button {
+    padding: 5px;
+    border: none;
+    background-color:#ccc; /* Color de fondo del botón de búsqueda */
+    color: #fff; /* Color del texto del botón de búsqueda */
+    cursor: pointer;
+    border-radius: 15px;
+  }
+  
+
+  .menu .categories div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white; /* Color inicial del texto de las categorías */
+
+    transition: color 0.3s ease; /* Agrega una transición suave al cambio de color */
+    height: 50px;
+    width: 100%;
+  }
+  
+  .menu .categories div:hover {
+    background-color: rgba(155, 4, 4, 0.897); 
+  }
+
+
+  .menu .categories div span {
+    margin-left: 15%; /* Agrega un margen solo al texto */
+  }

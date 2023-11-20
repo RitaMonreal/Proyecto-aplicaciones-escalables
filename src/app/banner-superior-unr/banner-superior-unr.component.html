@@ -1,22 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-</head>
 <body>
     <div class="banner">
         <div class="menu-button">
-    
-            <button>☰</button>
+            <button (click)="toggleMenu()">☰</button>
         </div>
         <div class="logo" routerLink="./pagina_principal"></div>
         <div class="action-buttons">
-
-       
             <div class="action-button" id="unirse" routerLink="./crear_cuenta">Unirse</div>
             <div class="action-button" id="iniciar-sesion" routerLink="./iniciar_sesion">Iniciar Sesión</div>
-          
+        </div>
+    <br>
+        <div [ngClass]="{'menu-open': isMenuOpen}" class="menu">
+            
+            <button id="cerrar" (click)="closeMenu()">x</button>
+            <br>
+            <div class="search-bar">
+                
+                <input type="text" placeholder="Buscar...">
+                <button><span class="material-icons">
+                    search
+                    </span></button>   
+            </div>
+            <div class="categories">
+                <div routerLink="./categoria/cine"><span>Cine</span></div>
+                <div routerLink="./categoria/musica"><span>Música</span></div>
+                <div routerLink="./categoria/varios"><span>Varios</span></div>
+            </div>
+            
         </div>
     </div>
 </body>
-</html>
+
