@@ -6,6 +6,7 @@ import { ContenidoPage } from './contenido.pages';
 import { DetallesArticuloComponent } from './components/detalles-articulo/detalles-articulo.component'; // Importa el componente DetallesArticuloComponent
 import { ArticulosSugeridosComponent } from './components/articulos-sugeridos/articulos-sugeridos.component';
 import { ArticuloSugeridoComponent } from './components/articulo-sugerido/articulo-sugerido.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ArticuloSugeridoComponent } from './components/articulo-sugerido/articu
   ],
   imports: [
     CommonModule, 
+    HttpClientModule
   ],
 })
 export class ContenidoModule {}

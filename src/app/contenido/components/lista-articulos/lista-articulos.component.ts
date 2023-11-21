@@ -11,7 +11,19 @@ import { Router } from '@angular/router';
 })
 
 export class ListaArticulosComponent {
-  constructor(private contenidoService: ContenidoService, private router: Router) {}
+  constructor(private contenidoService: ContenidoService, private router: Router) {
+    this.contenidoService.fetchArticuloFromApi().subscribe(
+      {
+        next: (response: any) =>{
+          //console.log(response);
+          this.contenidoService.articulos = response.articulosList;
+        },
+        error: (error: any) =>{
+          console.log(error);
+        }
+      }
+    )
+  }
 
   public get articulos(): articulo[] {
     return this.contenidoService.articulos;
