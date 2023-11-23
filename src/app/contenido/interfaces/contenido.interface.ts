@@ -1,5 +1,5 @@
 export interface articulo{
-    id_articulo: number,
+    id: number,
     titulo: string,
     image: string,
     cuerpo_articulo: string,

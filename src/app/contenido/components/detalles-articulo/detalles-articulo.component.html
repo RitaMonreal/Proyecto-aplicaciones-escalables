@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="article" *ngIf="(articulo$ | async) as articulo">
+  <div class="article">
     <h2>{{ articulo.titulo }}</h2>
     <img [src]="articulo.image" alt="{{ articulo.titulo }}">
     <p>{{ articulo.cuerpo_articulo }}</p>

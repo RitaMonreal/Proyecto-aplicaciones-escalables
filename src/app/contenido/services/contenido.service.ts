@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { articulo } from "../interfaces/contenido.interface";
-import { Observable, of } from "rxjs";
+import { Observable, map, of } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({ providedIn: "root" })
@@ -16,10 +16,9 @@ export class ContenidoService {
   }
 
   obtenerArticuloPorId(id: number): Observable<articulo | undefined> {
-    const articuloEncontrado = this.listaArticulos.find(
-      (articulo) => articulo.id_articulo === id
+    return this.http.get<articulo[]>(`${this.apiUrl}/articulos/${id}`).pipe(
+      map((articulos) => articulos.find((articulo) => articulo.id === id))
     );
-    return of(articuloEncontrado);
   }
 
   fetchArticulosPorCategoria(categoriaId: number): Observable<articulo[]> {
@@ -35,5 +34,7 @@ export class ContenidoService {
   public setCategoriaSeleccionada(categoriaId: number | null): void {
     this.categoriaSeleccionada = categoriaId;
   }
+
+  
   
 }
