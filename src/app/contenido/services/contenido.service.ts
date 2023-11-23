@@ -26,13 +26,14 @@ export class ContenidoService {
     this.categoriaSeleccionada = categoriaId; // Actualizo la categoría seleccionada
     return this.http.get<articulo[]>(`${this.apiUrl}/articulos/categoria/${categoriaId}`);
   }
+  
 
   public get articulos(): articulo[] {
     return this.listaArticulos;
   }
 
-
-public setCategoriaSeleccionada(categoriaId: number): void {
-  this.categoriaSeleccionada = categoriaId;
-}
+  public setCategoriaSeleccionada(categoriaId: number | null): void {
+    this.categoriaSeleccionada = categoriaId;
+  }
+  
 }

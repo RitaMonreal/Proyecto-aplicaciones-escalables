@@ -75,5 +75,4 @@ export class ListaArticulosComponent {
     this.contenidoService.setCategoriaSeleccionada(categoriaId);
     this.fetchArticulos(); // Llama al método para actualizar la lista de artículos
   }
-
 }
