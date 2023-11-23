@@ -16,7 +16,7 @@ export class ListaArticulosComponent {
       {
         next: (response: any) =>{
           //console.log(response);
-          this.contenidoService.articulos = response.articulosList;
+          this.contenidoService.listaArticulos = response.articulosList;
         },
         error: (error: any) =>{
           console.log(error);
@@ -32,4 +32,48 @@ export class ListaArticulosComponent {
   verDetalles(id: number) {
     this.router.navigate(['/detalles-articulo', id]);
   }
+
+  public get articulosPorCategoria(): articulo[] {
+    const categoriaSeleccionada = this.contenidoService.categoriaSeleccionada;
+    if (categoriaSeleccionada !== null) {
+      return this.articulos.filter(articulo => articulo.categoria === categoriaSeleccionada);
+    } else {
+      return this.articulos; // Si no hay categoría seleccionada, mostrar todos los artículos
+    }
+  }
+
+  private fetchArticulos() {
+    const categoriaSeleccionada = this.contenidoService.categoriaSeleccionada;
+    if (categoriaSeleccionada !== null) {
+      // Cargar artículos por categoría
+      this.contenidoService.fetchArticulosPorCategoria(categoriaSeleccionada).subscribe(
+        {
+          next: (response: any) => {
+            this.contenidoService.listaArticulos = response; // Actualiza la lista de artículos
+          },
+          error: (error: any) => {
+            console.log(error);
+          }
+        }
+      );
+    } else {
+      // Si no hay categoría seleccionada, obtén todos los artículos
+      this.contenidoService.fetchArticuloFromApi().subscribe(
+        {
+          next: (response: any) => {
+            this.contenidoService.listaArticulos = response.articulosList;
+          },
+          error: (error: any) => {
+            console.log(error);
+          }
+        }
+      );
+    }
+  }
+
+  seleccionarCategoria(categoriaId: number): void {
+    this.contenidoService.setCategoriaSeleccionada(categoriaId);
+    this.fetchArticulos(); // Llama al método para actualizar la lista de artículos
+  }
+
 }

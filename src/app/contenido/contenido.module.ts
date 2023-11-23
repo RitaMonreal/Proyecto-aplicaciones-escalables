@@ -7,6 +7,7 @@ import { DetallesArticuloComponent } from './components/detalles-articulo/detall
 import { ArticulosSugeridosComponent } from './components/articulos-sugeridos/articulos-sugeridos.component';
 import { ArticuloSugeridoComponent } from './components/articulo-sugerido/articulo-sugerido.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContenidoService } from './services/contenido.service';
 
 @NgModule({
   declarations: [
@@ -24,5 +25,6 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule, 
     HttpClientModule
   ],
+  providers: [ContenidoService]
 })
 export class ContenidoModule {}
