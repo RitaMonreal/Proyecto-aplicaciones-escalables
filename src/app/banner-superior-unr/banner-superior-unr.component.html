@@ -15,10 +15,9 @@
             <br>
             <div class="search-bar">
                 
-                <input type="text" placeholder="Buscar...">
-                <button><span class="material-icons">
-                    search
-                    </span></button>   
+                <input   placeholder="Buscar..." type="text" id="searchTerm">
+                <button type="button" (click)="searchByTerm()"><span class="material-icons">search</span></button>   
+                
             </div>
             <div class="categories">
                 <div (click)="seleccionarCategoria(2)"><span>Cine</span></div>

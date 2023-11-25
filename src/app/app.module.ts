@@ -12,6 +12,8 @@ import { ContenidoModule } from './contenido/contenido.module';
 import { RouterModule } from '@angular/router';
 import { FormularioNuevaPublicacionComponent } from './formulario-nueva-publicacion/formulario-nueva-publicacion.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     AppRoutingModule,
     ContenidoModule, 
     RouterModule,
-    CommonModule 
+    CommonModule,
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

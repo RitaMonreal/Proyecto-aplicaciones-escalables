@@ -10,9 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./articulo.component.css']
 })
 export class ArticuloComponent {
-  constructor(private contenidoService: ContenidoService, private router: Router) { }
+  constructor(private contenidoService: ContenidoService, private router: Router) {
+  }
 
-
+  public get articulos(): articulo[] {
+    return this.contenidoService.articulos;
+  }
 
   @Input()
   public articulo : articulo = {
@@ -24,17 +27,13 @@ export class ArticuloComponent {
     "autor": "Harry Styles"
   }
 
-  verDetalle() {
-    // Verifica si el id_articulo está presente y es válido
-    if (this.articulo && this.articulo.id !== undefined) {
-      // Navega solo si el id_articulo es válido
-      this.router.navigate(['/detalles-articulo', this.articulo.id]);
-    } else {
-      console.error('El id_articulo es indefinido o no válido.', this.articulo);
-    }
-  }
   
 
+  public verDetalles() {
+    // Aquí puedes navegar a la página de detalles y pasar el ID
+    this.router.navigate(['/detalles-articulo', this.articulo.id]);
+    
+}
   
 
 }

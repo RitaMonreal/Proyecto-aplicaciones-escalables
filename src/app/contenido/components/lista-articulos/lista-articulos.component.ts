@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 })
 
 export class ListaArticulosComponent {
+  searchTerm: string = "";
   constructor(private contenidoService: ContenidoService, private router: Router) {
-    this.contenidoService.fetchArticuloFromApi().subscribe(
+    this.contenidoService.fetchArticuloFromApi(this.searchTerm).subscribe(
       {
         next: (response: any) =>{
           //console.log(response);
@@ -29,9 +30,7 @@ export class ListaArticulosComponent {
     return this.contenidoService.articulos;
   }
 
-  verDetalles(id: number) {
-    this.router.navigate(['/detalles-articulo', id]);
-  }
+  
 
   public get articulosPorCategoria(): articulo[] {
     const categoriaSeleccionada = this.contenidoService.categoriaSeleccionada;
@@ -58,7 +57,7 @@ export class ListaArticulosComponent {
       );
     } else {
       // Si no hay categoría seleccionada, obtén todos los artículos
-      this.contenidoService.fetchArticuloFromApi().subscribe(
+      this.contenidoService.fetchArticuloFromApi(this.searchTerm).subscribe(
         {
           next: (response: any) => {
             this.contenidoService.listaArticulos = response.articulosList;

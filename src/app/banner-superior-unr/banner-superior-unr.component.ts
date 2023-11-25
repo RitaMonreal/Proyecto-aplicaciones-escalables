@@ -9,9 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./banner-superior-unr.component.css']
 })
 export class BannerSuperiorUnrComponent {
+
   isMenuOpen: boolean = false;
   //Hacer la solicitud al servidor
-  constructor(private http: HttpClient, private contenidoService: ContenidoService, private router: Router) {}
+  constructor(private http: HttpClient, private contenidoService: ContenidoService, private router: Router) {
+    this.searchArticles();
+  }
  
 
   toggleMenu() {
@@ -31,6 +34,23 @@ export class BannerSuperiorUnrComponent {
     this.router.navigate(['/']); // Navegar a la página principal
   }
 
+  public searchByTerm(): void{
+    this.searchArticles("harry");
+  }
 
- 
+
+  private searchArticles(searchTerm: string = ""): void{
+    this.contenidoService.fetchArticuloFromApi(searchTerm).subscribe(
+      {
+        next: (response: any) =>{
+          //console.log(response);
+          this.contenidoService.listaArticulos = response.articulosList;
+        },
+        error: (error: any) =>{
+          console.log(error);
+        }
+      }
+    )
+  }
+
 }
