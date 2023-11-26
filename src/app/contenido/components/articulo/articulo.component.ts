@@ -34,6 +34,11 @@ export class ArticuloComponent {
     this.router.navigate(['/detalles-articulo', this.articulo.id]);
     
 }
+
+eliminarArticulo() {
+  // Aquí implementa la lógica para eliminar el artículo
+  console.log('Artículo eliminado');
+}
   
 
 }

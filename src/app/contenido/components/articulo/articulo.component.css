@@ -20,7 +20,7 @@ body {
     object-fit: cover;
 }
 .article h2 {
-    font-size: 130%;
+    font-size: 125%;
     margin: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -47,4 +47,39 @@ body {
 .article-title:hover {
     background-color:black; 
     color: #fff; 
+}
+
+.article-container {
+    text-align: right; /* Alinea el contenido a la derecha */
+    height: 150px;
+    position: relative; /* Asegura que el botón de eliminar se posicione correctamente */
+}
+
+.delete-button {
+    position: absolute; /* Posiciona de forma absoluta con respecto al contenedor */
+    top: 1px; /* Distancia desde la parte superior */
+    right: 5px; /* Distancia desde la derecha */
+    color: black;
+    border: none;
+    background-color: transparent;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.delete-button:hover {
+
+    color: rgba(155, 4, 4, 0.897); 
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(25deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
