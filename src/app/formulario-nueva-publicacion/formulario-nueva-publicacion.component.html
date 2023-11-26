@@ -12,33 +12,36 @@
             <div class="form-group">
                 <label for="titulo">Título:</label>
                 <br>
-                <input type="text" id="titulo_publicacion_nueva" name="titulo_publicacion_nueva" required>
-            </div>
-
-            <div class="form-group">
+                <input type="text" [(ngModel)]="nuevoArticulo.titulo" name="titulo_publicacion_nueva" required>
+              </div>
+              
+              <div class="form-group">
                 <label for="texto">Contenido de la publicación:</label>
                 <br>
-                <textarea id="texto_publicacion_nueva" name="texto_publicacion_nueva" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
+                
+                <textarea [(ngModel)]="nuevoArticulo.cuerpo_articulo" name="texto_publicacion_nueva" rows="4" required></textarea>
+              </div>
+              
+              <!-- Asegúrate de manejar correctamente el archivo de imagen según tus necesidades -->
+              <div class="form-group">
                 <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen_publicacion_nueva" name="imagen_publicacion_nueva">
-            </div>
-
-            <div class="form-group">
+                <input type="text" [(ngModel)]="nuevoArticulo.image" name="imagen_publicacion_nueva">
+              </div>
+              
+              <div class="form-group">
                 <label for="categoria">Categoría:</label>
-                <select id="categoria" name="categoria" required>
-                    <option value="categoria1">Cine</option>
-                    <option value="categoria2">Música</option>
-                    <option value="categoria3">Varios</option>
+                <select [(ngModel)]="nuevoArticulo.categoria" name="categoria" required>
+                  <option value="1">Cine</option>
+                  <option value="2">Música</option>
+                  <option value="3">Varios</option>
                 </select>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Agregar Publicación">
+              </div>
+              
+              <div class="form-group">
+                <button (click)="agregarPublicacion()">Agregar Publicación</button>
                 <button id="cancelar" type="button" onclick="history.back()">Cancelar</button>
-            </div>
+              </div>
+              
     
         
       

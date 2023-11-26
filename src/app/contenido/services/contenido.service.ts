@@ -20,7 +20,11 @@ export class ContenidoService {
     //interpolacion de cadenas utilizando las comillas invertidas, cadenas con objetos
      return this.http.get(`http://localhost:7777/api/articulos?searchTerm=${searchTerm}`);
   }
-
+  
+  agregarPublicacion(articulo: articulo): Observable<any>{
+    return this.http.post("http://localhost:7777/api/articulos",articulo);
+  }
+  
   obtenerArticuloPorId(id: number): Observable<articulo | undefined> {
     return this.http.get<articulo[]>(`${this.apiUrl}/articulos/${id}`).pipe(
       map((articulos) => articulos.find((articulo) => articulo.id === id))
