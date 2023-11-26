@@ -15,9 +15,9 @@
             <br>
             <div class="search-bar">
                 
-                <input   placeholder="Buscar..." type="text" id="searchTerm">
+                <input  [(ngModel)]="searchTerm" placeholder="Buscar..." type="text" id="searchTerm">
                 <button type="button" (click)="searchByTerm()"><span class="material-icons">search</span></button>   
-                
+           <!--{{searchTerm}}-->
             </div>
             <div class="categories">
                 <div (click)="seleccionarCategoria(2)"><span>Cine</span></div>

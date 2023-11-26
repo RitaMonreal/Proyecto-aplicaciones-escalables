@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./banner-superior-unr.component.css']
 })
 export class BannerSuperiorUnrComponent {
-
+  public searchTerm: string = "";
   isMenuOpen: boolean = false;
   //Hacer la solicitud al servidor
   constructor(private http: HttpClient, private contenidoService: ContenidoService, private router: Router) {
@@ -35,7 +35,7 @@ export class BannerSuperiorUnrComponent {
   }
 
   public searchByTerm(): void{
-    this.searchArticles("harry");
+    this.searchArticles(this.searchTerm);
   }
 
 
