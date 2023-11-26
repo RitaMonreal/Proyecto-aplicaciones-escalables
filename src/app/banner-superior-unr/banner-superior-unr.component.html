@@ -5,8 +5,12 @@
         </div>
         <div class="logo" (click)="restablecerFiltros()"></div>
         <div class="action-buttons">
+            <div class="action-button" routerLink="./nueva_publicacion"><span class="material-icons">
+                post_add
+                </span></div>
             <div class="action-button" id="unirse" routerLink="./crear_cuenta">Unirse</div>
             <div class="action-button" id="iniciar-sesion" routerLink="./iniciar_sesion">Iniciar Sesión</div>
+            
         </div>
     <br>
         <div [ngClass]="{'menu-open': isMenuOpen}" class="menu">
