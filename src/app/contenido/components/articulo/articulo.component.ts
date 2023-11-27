@@ -40,5 +40,8 @@ eliminarArticulo() {
   console.log('Artículo eliminado');
 }
   
+editarArticulo(){
+  
+}
 
 }
