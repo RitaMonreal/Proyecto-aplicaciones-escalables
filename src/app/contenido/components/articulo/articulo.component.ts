@@ -35,11 +35,27 @@ export class ArticuloComponent {
     
 }
 
-eliminarArticulo() {
-  // Aquí implementa la lógica para eliminar el artículo
-  console.log('Artículo eliminado');
+
+eliminarArticulo(): void {
+  console.log('Haciendo clic en eliminar');
+  if (this.articulo && this.articulo.id) {
+    this.contenidoService.deleteArticle(this.articulo.id).subscribe(
+      () => {
+        // Aquí podrías realizar acciones adicionales si es necesario
+        // ...
+
+        // Eliminar el artículo de la lista local
+        this.contenidoService.listaArticulos = this.contenidoService.listaArticulos.filter(a => a.id !== this.articulo.id);
+      },
+      (error: any) => {
+        console.error('Error al eliminar el artículo:', error);
+      }
+    );
+  } else {
+    console.error('Error al eliminar el artículo');
+  }
 }
-  
+
 editarArticulo(){
   
 }

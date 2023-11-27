@@ -14,6 +14,7 @@ import { FormularioNuevaPublicacionComponent } from './formulario-nueva-publicac
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FormularioEdicionComponent } from './formulario-edicion/formulario-edicion.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     CrearCuentaComponent,
     NotFoundComponent,
     FormularioNuevaPublicacionComponent,
-    PerfilUsuarioComponent
+    PerfilUsuarioComponent,
+    FormularioEdicionComponent
   ],
   imports: [
     BrowserModule,

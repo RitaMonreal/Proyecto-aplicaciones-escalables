@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { articulo } from "../interfaces/contenido.interface";
-import { Observable, map, of } from "rxjs";
+import { Observable, map} from "rxjs";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({ providedIn: "root" })
@@ -44,5 +44,11 @@ export class ContenidoService {
   public setCategoriaSeleccionada(categoriaId: number | null): void {
     this.categoriaSeleccionada = categoriaId;
   }
+
+  deleteArticle(articleId: number): Observable<any> {
+    const url = `http://localhost:7777/api/articulos/${articleId}`;
+    return this.http.delete(url);
+  }
+  
   
 }
