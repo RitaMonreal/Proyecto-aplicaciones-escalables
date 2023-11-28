@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { articulo } from "../interfaces/contenido.interface";
 import { Observable, map} from "rxjs";
 import { HttpClient } from "@angular/common/http";
+import { editarArticulo } from "src/app/formulario-edicion/interfaces/formulario-edicion.interface";
 
 @Injectable({ providedIn: "root" })
 export class ContenidoService {
@@ -25,11 +26,17 @@ export class ContenidoService {
     return this.http.post("http://localhost:7777/api/articulos",articulo);
   }
   
-  obtenerArticuloPorId(id: number): Observable<articulo | undefined> {
-    return this.http.get<articulo[]>(`${this.apiUrl}/articulos/${id}`).pipe(
-      map((articulos) => articulos.find((articulo) => articulo.id === id))
-    );
+ 
+
+  getArticleById(id: number): Observable<any> {
+    return this.http.get(`http://localhost:7777/api/articulos/${id}`);
   }
+
+  obtenerDetallesArticulo(id: number): Observable<articulo> {
+    return this.http.get<articulo>(`${this.apiUrl}/articulos/${id}`);
+  }
+
+  
 
   fetchArticulosPorCategoria(categoriaId: number): Observable<articulo[]> {
     this.categoriaSeleccionada = categoriaId; // Actualizo la categoría seleccionada
@@ -50,5 +57,13 @@ export class ContenidoService {
     return this.http.delete(url);
   }
   
+  updateArticle(articleId: number, updatedArticle: articulo): Observable<any> {
+    const url = `http://localhost:7777/api/articulos/${articleId}`;
+    return this.http.put(url, updatedArticle);
+  }
+
+  obtenerArticuloParaEdicion(id: number): Observable<editarArticulo | undefined> {
+    return this.http.get<editarArticulo>(`${this.apiUrl}/articulos/${id}`);
+  }
   
 }

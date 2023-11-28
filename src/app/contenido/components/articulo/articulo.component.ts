@@ -29,9 +29,10 @@ export class ArticuloComponent {
 
   
 
-  public verDetalles() {
+  public verDetalles(id: number): void{
     // Aquí puedes navegar a la página de detalles y pasar el ID
-    this.router.navigate(['/detalles-articulo', this.articulo.id]);
+    this.router.navigate(['/detalles-articulo', id]);
+
     
 }
 
@@ -56,8 +57,10 @@ eliminarArticulo(): void {
   }
 }
 
-editarArticulo(){
-  
+editarArticulo(id: number): void {
+  this.router.navigate(['/editar_publicacion', id]);
 }
+
+
 
 }

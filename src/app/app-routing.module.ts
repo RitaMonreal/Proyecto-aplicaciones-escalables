@@ -6,6 +6,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ContenidoPage } from './contenido/contenido.pages';
 import { DetallesArticuloComponent } from './contenido/components/detalles-articulo/detalles-articulo.component';
 import { FormularioNuevaPublicacionComponent } from './formulario-nueva-publicacion/formulario-nueva-publicacion.component';
+import { FormularioEdicionComponent } from './formulario-edicion/formulario-edicion.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 const routes: Routes = [
   {path: "iniciar_sesion", component: IniciarSesionComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path: "detalles-articulo/:id", component: DetallesArticuloComponent},
   {path: "", redirectTo: "pagina_principal", pathMatch: "full"},
   {path: "nueva_publicacion", component: FormularioNuevaPublicacionComponent},
+  {path: "editar_publicacion/:id", component: FormularioEdicionComponent},
+  {path: "perfil_usuario", component: PerfilUsuarioComponent},
   {path: "not-found", component: NotFoundComponent},
   {path: "**", redirectTo: "not-found", pathMatch: "full"},
  

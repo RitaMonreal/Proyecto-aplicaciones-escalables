@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>  
+    <div class="paginaWeb" style="min-height: 460px;">
+        
+
+        <div id ="contenedorPublic">
+       
+            <h1>Editar Publicación</h1>
+
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <br>
+                <input type="text" [(ngModel)]="editarArticulo.titulo" name="titulo_publicacion_editada" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="texto">Contenido de la publicación:</label>
+                <br>
+                
+                <textarea [(ngModel)]="editarArticulo.cuerpo_articulo" name="texto_publicacion_editada" rows="4" required></textarea>
+              </div>
+              
+              <!-- Asegúrate de manejar correctamente el archivo de imagen según tus necesidades -->
+              <div class="form-group">
+                <label for="imagen">Imagen:</label>
+                <input type="text" [(ngModel)]="editarArticulo.image" name="imagen_publicacion_editada">
+              </div>
+              
+              <div class="form-group">
+                <button (click)="editarPublicacion()">Editar Publicación</button>
+                <button id="cancelar" type="button" onclick="history.back()">Cancelar</button>
+              </div>
+              
+    
+        
+      
+         </div>
+        
+    </div>
+     
+</body>
+
+</html>

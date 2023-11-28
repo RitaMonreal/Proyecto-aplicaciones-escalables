@@ -1,5 +1,5 @@
 <div class="container" >
-  <div class="article">
+  <div class="article" *ngIf="articulo">
     <h2>{{ articulo.titulo }}</h2>
     <img [src]="articulo.image" alt="{{ articulo.titulo }}">
     <p>{{ articulo.cuerpo_articulo }}</p>
@@ -12,3 +12,4 @@
   <br><br>
   <app-articulos-sugeridos></app-articulos-sugeridos>  
 </div>
+
