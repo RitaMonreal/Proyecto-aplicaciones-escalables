@@ -1,27 +1,43 @@
 .container {
-  max-width: 80vw;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .article {
-  flex-basis: 70%; /* Ajusta el ancho del artículo principal */
+  width: 70%;
   margin-right: 20px;
-  text-align: center; /* Alinea los elementos hijos horizontalmente al centro */
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.metadata {
+  margin-bottom: 15px;
+}
 
+.categoria {
+  font-size: 18px;
+  font-weight: bold;
+  color: white; /* Cambiar el color según tus preferencias */
+  background-color: rgba(0, 0, 0, 1);
+  height: 45px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Centrar horizontalmente */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición de color al pasar el mouse */
+  margin-top: 15px;
+}
 
-img {
-  border: 2px solid #ccc;
-  margin: 10px 0;
-  max-width: 75%; /* Asegura que la imagen no sobrepase el ancho de su contenedor */
-  height: auto;
+.categoria:hover {
+  background-color: rgba(155, 4, 4, 0.897); /* Color al pasar el mouse */
 }
 
 h2 {
@@ -29,11 +45,7 @@ h2 {
   font-weight: bold;
   color: #333;
   margin: 10px 0;
-  text-align: center;
-
 }
-
-
 
 p {
   font-size: 16px;
@@ -41,27 +53,29 @@ p {
   color: #555;
 }
 
-.categoria {
-  font-weight: bold;
-}
-
 .autor {
   font-style: italic;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+}
 
 .sugerencias-container {
-  background-color: #000000; /* Fondo en tono claro de rojo */
-  border: 5px solid rgba(155, 4, 4, 0.897); /* Borde en rojo */
-  
-  padding: 10px;
+  background-color: #000;
+  border: 5px solid rgba(155, 4, 4, 0.897);
+  padding: 20px;
   margin-top: 20px;
-  width: 250px;
+  width: 100%;
+  color: #fff;
 }
 
 .sugerencias-title {
-  font-size: 1.5em; /* Tamaño del texto */
-  font-weight: bold; /* Negrita */
-  color: #ffffff; /* Color del texto en rojo */
+  font-size: 1.5em;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 10px;
 }

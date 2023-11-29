@@ -1,15 +1,17 @@
-<div class="container" >
+<div class="container">
   <div class="article" *ngIf="articulo">
-    <h2>{{ articulo.titulo }}</h2>
-    <img [src]="articulo.image" alt="{{ articulo.titulo }}">
-    <p>{{ articulo.cuerpo_articulo }}</p>
-    <p><span class="categoria">Categoría:</span> {{ articulo.categoria }}</p>
-    <p><span class="autor">Autor:</span> {{ articulo.autor }}</p>
+    <div class="metadata">
+      <p class="categoria">{{ getCategoryName(articulo.categoria) }}</p>
+      <h2>{{ articulo.titulo }}</h2>
+      <p class="autor">Por: {{ articulo.autor }}</p>
+    </div>
+    <div class="article-content">
+      <img [src]="articulo.image" alt="{{ articulo.titulo }}">
+      <p>{{ articulo.cuerpo_articulo }}</p>
+    </div>
   </div>
   <div class="sugerencias-container">
     <div class="sugerencias-title">Recomendados</div>
+    <app-articulos-sugeridos></app-articulos-sugeridos>
   </div>
-  <br><br>
-  <app-articulos-sugeridos></app-articulos-sugeridos>  
 </div>
-

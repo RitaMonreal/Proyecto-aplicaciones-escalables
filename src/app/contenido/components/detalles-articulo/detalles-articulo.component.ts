@@ -31,6 +31,21 @@ export class DetallesArticuloComponent {
       );
     });
   }
+
+  // Agrega esta función en tu componente TypeScript
+getCategoryName(category: number): string {
+  switch (category) {
+    case 1:
+      return 'Música';
+    case 2:
+      return 'Cine';
+    case 3:
+      return 'Varios';
+    default:
+      return 'Desconocido';
+  }
+}
+
 }
 
 
