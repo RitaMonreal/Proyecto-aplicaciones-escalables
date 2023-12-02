@@ -14,14 +14,37 @@ export class ArticulosSugeridosComponent {
 
   get articulos(): articulo[] {
     // Obtén todos los artículos sugeridos desde el servicio
-    console.log('Current Article ID:', this.currentArticleId);
     const todosLosArticulos = this.contenidoService.articulos;
 
-    // Filtra para excluir el artículo actual y toma solo los primeros 4
-    return todosLosArticulos
-      .filter(articulo => articulo.id !== this.currentArticleId)
-      .slice(0, 5);
+    // Verifica que currentArticleId no sea undefined
+    if (this.currentArticleId !== undefined) {
+      // Filtra para excluir el artículo actual
+      const articulosExcluyendoActual = todosLosArticulos.filter(articulo => articulo.id !== this.currentArticleId);
+
+      // Baraja aleatoriamente el array de artículos
+      const articulosAleatorios = this.shuffleArray(articulosExcluyendoActual);
+
+      // Toma solo los primeros 4 artículos aleatorios
+      return articulosAleatorios.slice(0, 5);
+    } else {
+      // Si currentArticleId es undefined, devuelve una lista vacía
+      return [];
+    }
   }
+
+  // Función para barajar aleatoriamente un array
+  private shuffleArray(array: any[]): any[] {
+    let currentIndex = array.length, randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+  }
+}
   
 
-}
+
