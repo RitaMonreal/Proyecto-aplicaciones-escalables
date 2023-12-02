@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ContenidoService } from '../contenido/services/contenido.service';
 import { Router } from '@angular/router';
+import { articulo } from '../contenido/interfaces/contenido.interface';
 
 @Component({
   selector: 'app-banner-superior-unr',
@@ -15,6 +16,9 @@ export class BannerSuperiorUnrComponent {
   constructor(private http: HttpClient, private contenidoService: ContenidoService, private router: Router) {
     this.searchArticles();
   }
+
+  
+
  
 
   toggleMenu() {
@@ -38,6 +42,11 @@ export class BannerSuperiorUnrComponent {
     this.searchArticles(this.searchTerm);
   }
 
+  public get articulos(): articulo[] {
+    return this.contenidoService.articulos;
+  }
+
+
 
   private searchArticles(searchTerm: string = ""): void{
     this.contenidoService.fetchArticuloFromApi(searchTerm).subscribe(
@@ -53,4 +62,17 @@ export class BannerSuperiorUnrComponent {
     )
   }
 
+  public articuloAleatorio(): void {
+    // Obtener un índice aleatorio
+    const indiceAleatorio = Math.floor(Math.random() * this.contenidoService.articulos.length);
+
+    // Obtener el artículo aleatorio
+    const articuloAleatorio = this.contenidoService.articulos[indiceAleatorio];
+
+    // Navegar a la página de detalles con el ID del artículo aleatorio
+    this.router.navigate(['/detalles-articulo', articuloAleatorio.id]);
+  }
+
 }
+
+
