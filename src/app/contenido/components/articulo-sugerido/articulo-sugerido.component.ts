@@ -21,4 +21,10 @@ export class ArticuloSugeridoComponent {
     "categoria": 1,
     "autor": "Harry Styles"
   }
+
+  public verDetalles(id: number): void{
+    // Aquí puedes navegar a la página de detalles y pasar el ID
+    this.router.navigate(['/detalles-articulo', id]);    
+}
+
 }

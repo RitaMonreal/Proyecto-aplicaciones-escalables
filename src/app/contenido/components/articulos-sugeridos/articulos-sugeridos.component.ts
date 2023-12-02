@@ -9,9 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./articulos-sugeridos.component.css']
 })
 export class ArticulosSugeridosComponent {
+  @Input() currentArticleId: number | undefined;
   constructor(private contenidoService: ContenidoService, private router: Router) {}
 
-  public get articulos(): articulo[] {
-    return this.contenidoService.articulos;
+  get articulos(): articulo[] {
+    // Obtén todos los artículos sugeridos desde el servicio
+    console.log('Current Article ID:', this.currentArticleId);
+    const todosLosArticulos = this.contenidoService.articulos;
+
+    // Filtra para excluir el artículo actual y toma solo los primeros 4
+    return todosLosArticulos
+      .filter(articulo => articulo.id !== this.currentArticleId)
+      .slice(0, 5);
   }
+  
+
 }

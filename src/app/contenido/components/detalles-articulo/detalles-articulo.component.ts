@@ -11,15 +11,17 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class DetallesArticuloComponent {
   public articulo: articulo | undefined;
+  public currentArticleId: number | undefined;
 
   constructor(
     private contenidoService: ContenidoService,
     private route: ActivatedRoute
   ) {
+    this.currentArticleId = undefined; 
     // Obtener el ID del artículo de los parámetros de la URL
     this.route.params.subscribe(params => {
       const id = +params['id']; // El '+' convierte el parámetro a número
-
+      this.currentArticleId = id;
       // Llamar al servicio para obtener el artículo por ID
       this.contenidoService.getArticleById(id).subscribe(
         response => {
