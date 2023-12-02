@@ -1,13 +1,52 @@
 <div class="container">
+  
   <div class="article" *ngIf="articulo">
     <div class="metadata">
       <p class="categoria">{{ getCategoryName(articulo.categoria) }}</p>
       <h2>{{ articulo.titulo }}</h2>
-      <p class="autor">Por: {{ articulo.autor }}</p>
+      
     </div>
+
+  
+
     <div class="article-content">
-      <img [src]="articulo.image" alt="{{ articulo.titulo }}">
+      
+
+      <div id="autor">
+        <img class="perfil-img" src="URL_DE_LA_IMAGEN" alt="Foto de perfil">
+        <p class="autor">Por: {{ articulo.autor }}</p>
+      </div>
+
+      <div id="imagen_articulo">
+        <img [src]="articulo.image" alt="{{ articulo.titulo }}">
+      </div>
+
+       <div class="social-icons">  
+        <div class="star-container">
+          <button class="star-button" [class.active]="isStarActive" (click)="toggleStar()">
+            <i class="fas fa-fire"></i>
+          </button>
+          <span class="star-counter">{{ starCounter }}</span>
+        </div>
+        <button class="social-button" title="Compartir en Facebook">
+          <i class="fab fa-facebook-square"></i>
+        </button>
+        <button class="social-button" title="Compartir en Twitter">
+          <i class="fab fa-twitter-square"></i>
+        </button>
+        <button class="social-button" title="Compartir en Instagram">
+          <i class="fab fa-instagram-square"></i>
+        </button>
+        <button class="social-button" title="Compartir en Pinterest">
+          <i class="fab fa-pinterest-square"></i>
+        </button>
+       
+        
+        
+      </div>
       <p>{{ articulo.cuerpo_articulo }}</p>
+     
+
     </div>
   </div>
   <div class="sugerencias-container">

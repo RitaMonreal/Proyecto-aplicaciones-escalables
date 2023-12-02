@@ -2,6 +2,8 @@ import { Component, Input } from "@angular/core";
 import { ContenidoService } from '../../services/contenido.service';
 import { articulo } from '../../interfaces/contenido.interface';
 import { ActivatedRoute, Router } from "@angular/router";
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
 
 
 @Component({
@@ -15,7 +17,8 @@ export class DetallesArticuloComponent {
 
   constructor(
     private contenidoService: ContenidoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer
   ) {
     this.currentArticleId = undefined; 
     // Obtener el ID del artículo de los parámetros de la URL
@@ -47,10 +50,22 @@ getCategoryName(category: number): string {
       return 'Desconocido';
   }
 }
+starCounter: number = 0;
+
+isStarActive: boolean = false;
+
+toggleStar() {
+  this.isStarActive = !this.isStarActive;
+  this.starCounter += this.isStarActive ? 1 : -1;
+}
+
+  incrementCounter() {
+    this.starCounter++;
+  }
+
 
 }
 
 
 
 
-  

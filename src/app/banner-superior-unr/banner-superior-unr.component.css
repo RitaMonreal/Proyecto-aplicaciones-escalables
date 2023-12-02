@@ -23,11 +23,13 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     margin-top: 10px;
+    margin-left: 33%;
     
 }
 
 .action-buttons {
     display: flex;
+    
 }
 
 .action-button:hover {
