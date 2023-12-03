@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ContenidoService } from '../contenido/services/contenido.service';
 import { editarArticulo } from './interfaces/formulario-edicion.interface';
 
+
 @Component({
   selector: 'app-formulario-edicion',
   templateUrl: './formulario-edicion.component.html',
@@ -10,47 +11,45 @@ import { editarArticulo } from './interfaces/formulario-edicion.interface';
 })
 
 export class FormularioEdicionComponent {
-  editarArticulo: editarArticulo = {
-    id: 0, titulo: '', cuerpo_articulo: '', image: '',
-    categoria: 0,
-    autor: ''
-  };
+  tituloE: string = '';
+  cuerpo_articuloE: string = '';
+  imageE: string = '';
 
   constructor(
+    private contenidoService: ContenidoService,
     private route: ActivatedRoute,
-    private router: Router,
-    private contenidoService: ContenidoService
+    private router: Router
   ) {
-    this.route.params.subscribe(params => {
-      const id = +params['id'];
-      this.cargarArticuloParaEdicion(id);
-    });
-  }
+    // Obtener los detalles del artículo
+    const id = this.route.snapshot.params['id'] as number;
 
-  cargarArticuloParaEdicion(id: number): void {
-    this.contenidoService.obtenerArticuloParaEdicion(id).subscribe(
-      (articulo: editarArticulo | undefined) => {
-        if (articulo) {
-          this.editarArticulo = articulo;
-        } else {
-          console.error('El artículo para edición no se pudo cargar correctamente.');
-        }
+    this.contenidoService.obtenerDetallesArticulo(id).subscribe(
+      (articulo) => {
+        this.tituloE = articulo.titulo;
+        this.cuerpo_articuloE = articulo.cuerpo_articulo;
+        this.imageE = articulo.image;
       },
-      error => {
-        console.error('Error al cargar el artículo para edición', error);
+      (error) => {
+        console.error('Error al obtener detalles del artículo:', error);
       }
     );
   }
 
   editarPublicacion(): void {
-    this.contenidoService.updateArticle(this.editarArticulo.id, this.editarArticulo).subscribe(
+    const id = this.route.snapshot.params['id'] as number;
+    const articleData: editarArticulo = {
+      titulo: this.tituloE,
+      cuerpo_articulo: this.cuerpo_articuloE,
+      image: this.imageE,
+    };
+
+    this.contenidoService.updateArticle(id, articleData).subscribe(
       () => {
-        console.log('Artículo editado con éxito');
-        // Puedes redirigir a la página de detalles u otra página después de la edición
-        this.router.navigate(['/detalles', this.editarArticulo.id]);
+        // Manejar la redirección o mostrar un mensaje de éxito
+        this.router.navigate(['/detalles-articulo', id]);
       },
-      error => {
-        console.error('Error al editar el artículo', error);
+      (error) => {
+        console.error('Error al actualizar el artículo:', error);
       }
     );
   }

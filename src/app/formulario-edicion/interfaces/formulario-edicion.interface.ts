@@ -1,7 +1,6 @@
 import { articulo } from "src/app/contenido/interfaces/contenido.interface";
 
-export interface editarArticulo extends articulo{
-    id: number;
+export interface editarArticulo{
     titulo: string;
     cuerpo_articulo: string;
     image: string;

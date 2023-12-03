@@ -31,19 +31,19 @@ export class ArticuloComponent {
 
   public verDetalles(id: number): void{
     // Aquí puedes navegar a la página de detalles y pasar el ID
-    this.router.navigate(['/detalles-articulo', id]);    
+    this.router.navigate(['/detalles-articulo', id]);
+
 }
+
 
 eliminarArticulo(): void {
   console.log('Haciendo clic en eliminar');
   if (this.articulo && this.articulo.id) {
     this.contenidoService.deleteArticle(this.articulo.id).subscribe(
       () => {
-        // Aquí podrías realizar acciones adicionales si es necesario
-        // ...
-
-        // Eliminar el artículo de la lista local
-        this.contenidoService.listaArticulos = this.contenidoService.listaArticulos.filter(a => a.id !== this.articulo.id);
+    
+        this.router.navigate(['/pagina_principal']);
+        
       },
       (error: any) => {
         console.error('Error al eliminar el artículo:', error);

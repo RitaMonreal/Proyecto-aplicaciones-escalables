@@ -56,14 +56,14 @@ export class ContenidoService {
     const url = `http://localhost:7777/api/articulos/${articleId}`;
     return this.http.delete(url);
   }
-  
-  updateArticle(articleId: number, updatedArticle: articulo): Observable<any> {
-    const url = `http://localhost:7777/api/articulos/${articleId}`;
-    return this.http.put(url, updatedArticle);
-  }
 
-  obtenerArticuloParaEdicion(id: number): Observable<editarArticulo | undefined> {
-    return this.http.get<editarArticulo>(`${this.apiUrl}/articulos/${id}`);
+ /* updateArticle(id: number, article: articulo): Observable<articulo> {
+    return this.http.put<articulo>(`http://localhost:7777/api/articulos/${id}`, article);
+  }*/
+
+  updateArticle(id: number, articleData: editarArticulo): Observable<articulo> {
+    return this.http.put<articulo>(`http://localhost:7777/api/articulos/${id}`, articleData);
   }
+  
   
 }

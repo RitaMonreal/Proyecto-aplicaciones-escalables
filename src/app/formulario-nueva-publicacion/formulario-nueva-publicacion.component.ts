@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ContenidoService } from '../contenido/services/contenido.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-nueva-publicacion',
@@ -9,13 +10,14 @@ import { ContenidoService } from '../contenido/services/contenido.service';
 export class FormularioNuevaPublicacionComponent {
   public nuevoArticulo: any = {};
 
-  constructor(private contenidoService: ContenidoService) {}
+  constructor(private contenidoService: ContenidoService, private router: Router) {}
 
   public agregarPublicacion(){
     this.contenidoService.agregarPublicacion(this.nuevoArticulo).subscribe(
       {
         next: (response: any) => {
           console.log(response);
+          this.router.navigate(['/pagina_principal']);
         },
         error: (error: any) => {
           console.log(error);
