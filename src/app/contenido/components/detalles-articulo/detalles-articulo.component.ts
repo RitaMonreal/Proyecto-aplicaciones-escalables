@@ -18,7 +18,8 @@ export class DetallesArticuloComponent {
   constructor(
     private contenidoService: ContenidoService,
     private route: ActivatedRoute,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private router: Router
   ) {
     this.currentArticleId = undefined; 
     // Obtener el ID del artículo de los parámetros de la URL
@@ -63,6 +64,9 @@ toggleStar() {
     this.starCounter++;
   }
 
+  seleccionarCategoria(categoriaId: number): void {
+    this.contenidoService.setCategoriaSeleccionada(categoriaId);
+  }
 
 }
 

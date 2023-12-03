@@ -2,7 +2,7 @@
   
   <div class="article" *ngIf="articulo">
     <div class="metadata">
-      <p class="categoria">{{ getCategoryName(articulo.categoria) }}</p>
+      <p class="categoria"  (click)="seleccionarCategoria(articulo.categoria)">{{ getCategoryName(articulo.categoria) }}</p>
       <h2>{{ articulo.titulo }}</h2>
       
     </div>

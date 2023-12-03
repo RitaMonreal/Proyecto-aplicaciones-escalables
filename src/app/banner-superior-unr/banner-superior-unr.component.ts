@@ -16,11 +16,7 @@ export class BannerSuperiorUnrComponent {
   constructor(private http: HttpClient, private contenidoService: ContenidoService, private router: Router) {
     this.searchArticles();
   }
-
   
-
- 
-
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }

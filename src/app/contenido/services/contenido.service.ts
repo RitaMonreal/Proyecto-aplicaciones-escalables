@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { articulo } from "../interfaces/contenido.interface";
-import { Observable, map} from "rxjs";
+import { usuario } from "../interfaces/usuario.interface";
+import { Observable} from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { editarArticulo } from "src/app/formulario-edicion/interfaces/formulario-edicion.interface";
 
@@ -26,6 +27,9 @@ export class ContenidoService {
     return this.http.post("http://localhost:7777/api/articulos",articulo);
   }
   
+  crearUsuario(usuario: usuario): Observable<any>{
+    return this.http.post("http://localhost:7777/api/auth/login",usuario);
+  }
  
 
   getArticleById(id: number): Observable<any> {
@@ -57,9 +61,6 @@ export class ContenidoService {
     return this.http.delete(url);
   }
 
- /* updateArticle(id: number, article: articulo): Observable<articulo> {
-    return this.http.put<articulo>(`http://localhost:7777/api/articulos/${id}`, article);
-  }*/
 
   updateArticle(id: number, articleData: editarArticulo): Observable<articulo> {
     return this.http.put<articulo>(`http://localhost:7777/api/articulos/${id}`, articleData);
