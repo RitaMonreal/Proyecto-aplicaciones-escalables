@@ -58,4 +58,9 @@ editarArticulo(id: number): void {
   this.router.navigate(['/editar_publicacion', id]);
 }
 
+esAdmin(): boolean {
+
+  return this.contenidoService.userRol === 'admin';
+}
+
 }

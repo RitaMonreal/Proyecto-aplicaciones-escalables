@@ -1,8 +1,8 @@
 <div class="article-container">
-    <button class="edit-button" (click)="editarArticulo(articulo.id)">
-      <span class="material-icons">edit</span>
+    <button class="edit-button" *ngIf="esAdmin()" (click)="editarArticulo(articulo.id)">
+      <span class="material-icons" >edit</span>
     </button>
-    <button class="delete-button" (click)="eliminarArticulo()">
+    <button class="delete-button" *ngIf="esAdmin()"  (click)="eliminarArticulo()">
       <span class="material-icons">delete</span>
     </button>
       <div class="article" (click)="verDetalles(articulo.id)">
