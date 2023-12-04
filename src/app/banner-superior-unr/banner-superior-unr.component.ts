@@ -12,9 +12,14 @@ import { articulo } from '../contenido/interfaces/contenido.interface';
 export class BannerSuperiorUnrComponent {
   public searchTerm: string = "";
   isMenuOpen: boolean = false;
-  //Hacer la solicitud al servidor
+  
   constructor(private http: HttpClient, private contenidoService: ContenidoService, private router: Router) {
-    this.searchArticles();
+    
+  }
+
+  esAdmin(): boolean {
+
+    return this.contenidoService.userRol === 'admin';
   }
   
   toggleMenu() {

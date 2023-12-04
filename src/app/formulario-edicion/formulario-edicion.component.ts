@@ -23,7 +23,7 @@ export class FormularioEdicionComponent {
     // Obtener los detalles del artículo
     const id = this.route.snapshot.params['id'] as number;
 
-    this.contenidoService.obtenerDetallesArticulo(id).subscribe(
+    this.contenidoService.getArticleById(id).subscribe(
       (articulo) => {
         this.tituloE = articulo.titulo;
         this.cuerpo_articuloE = articulo.cuerpo_articulo;

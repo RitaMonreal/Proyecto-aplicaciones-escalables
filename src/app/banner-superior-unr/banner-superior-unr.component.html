@@ -9,7 +9,7 @@
                 <span class="material-icons">
                     shuffle</span>
             </div>
-            <div class="action-button" routerLink="./nueva_publicacion"><span class="material-icons">
+            <div *ngIf="esAdmin()" class="action-button" routerLink="./nueva_publicacion"><span class="material-icons">
                 post_add
                 </span></div>
                 <div class="action-button" id="perfil" routerLink="./perfil_usuario">Perfil</div>

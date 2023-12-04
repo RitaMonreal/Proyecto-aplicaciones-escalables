@@ -9,6 +9,7 @@ import {Router } from '@angular/router';
 })
 export class IniciarSesionComponent {
   public newUser: any = {};
+  public errorMessage: string = '';
   constructor(private contenidoService: ContenidoService, private router: Router) {}
 
   public iniciarSesion(){
@@ -16,12 +17,17 @@ export class IniciarSesionComponent {
       {
         next: (response: any) => {
           console.log(response);
+          this.contenidoService.setAuthToken(response.token);
+          this.contenidoService.setUserRol(response.rol);
           this.router.navigate(['/pagina_principal']);
         },
         error: (error: any) => {
           console.log(error);
+          this.errorMessage = 'Hubo un error durante el inicio de sesión. Por favor, verifica tus credenciales.';
+          
         }
       }
     )
   }
 }
+

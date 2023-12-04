@@ -13,10 +13,13 @@ import { PaginaBienvenidaComponent } from './pagina-bienvenida/pagina-bienvenida
 const routes: Routes = [
   {path: "iniciar_sesion", component: IniciarSesionComponent},
   {path: "crear_cuenta", component: CrearCuentaComponent},
+
   { path: "pagina_principal", component: ContenidoPage },
   {path: "detalles-articulo/:id", component: DetallesArticuloComponent},
+
   {path: "", redirectTo: "pagina_bienvenida", pathMatch: "full"},
   {path: "pagina_bienvenida", component: PaginaBienvenidaComponent},
+  
   {path: "nueva_publicacion", component: FormularioNuevaPublicacionComponent},
   {path: "editar_publicacion/:id", component: FormularioEdicionComponent},
   {path: "perfil_usuario", component: PerfilUsuarioComponent},
