@@ -12,23 +12,11 @@ export class ContenidoService {
   searchTerm: string = '';  
   private apiUrl = "http://localhost:7777/api";
   public categoriaSeleccionada: number | null = null; // Agregué la propiedad categoriaSeleccionada
-
+  public isAuthenticated: boolean = false;
+  userRol: string | null = null;
+  
   constructor(private http: HttpClient) {}
 
-  setAuthToken(token: string): void {
-    localStorage.setItem("token", token);
-  }
-
-  
-  userRol: string | null = null;
-
-  setUserRol(rol: string): void {
-      this.userRol = rol;
-      console.log('Rol establecido en el servicio:', this.userRol);
-  }
-
-
-  
   fetchArticuloFromApi(searchTerm: string) : Observable <any> {
     //interpolacion de cadenas utilizando las comillas invertidas, cadenas con objetos
      return this.http.get(`http://localhost:7777/api/articulos?searchTerm=${searchTerm}`);
@@ -42,6 +30,10 @@ export class ContenidoService {
       }
     });
   }
+  
+  crearCuenta(usuario: usuario): Observable<any>{
+    return this.http.post("http://localhost:7777/api/auth/register",usuario);
+  }
 
   updateArticle(id: number, articleData: editarArticulo): Observable<articulo> {
     return this.http.put<articulo>(`http://localhost:7777/api/articulos/${id}`, articleData,
@@ -52,11 +44,6 @@ export class ContenidoService {
     });
   }
 
-  crearUsuario(usuario: usuario): Observable<any>{
-    return this.http.post("http://localhost:7777/api/auth/login",usuario);
-  }
- 
-
   getArticleById(id: number): Observable<any> {
     return this.http.get(`http://localhost:7777/api/articulos/${id}`,
     {
@@ -66,11 +53,6 @@ export class ContenidoService {
     }
     );
   }
-
- /* deleteArticle(articleId: number): Observable<any> {
-    const url = `http://localhost:7777/api/articulos/${articleId}`;
-    return this.http.delete(url);
-  }*/
 
   deleteArticle(articleId: number): Observable<any> {
     const url = `http://localhost:7777/api/articulos/${articleId}`;
@@ -95,10 +77,35 @@ export class ContenidoService {
     this.categoriaSeleccionada = categoriaId;
   }
 
- 
+  loginUsuario(usuario: usuario): Observable<any>{
+    this.login();
+    return this.http.post("http://localhost:7777/api/auth/login",usuario);
+  }
 
-  
-  
+  login(): void {
+    // Lógica para iniciar sesión...
+    this.isAuthenticated = true;
+  }
+
+  logout(): void {
+    this.isAuthenticated = false;
+    localStorage.removeItem('token');
+    localStorage.removeItem('rol');
+  }
+
+  setAuthToken(token: string): void {
+    localStorage.setItem("token", token);
+  }
+
+  setUserRol(rol: string): void {
+      this.userRol = rol;
+      console.log('Rol establecido en el servicio:', this.userRol);
+  }
+
+  get isLoggedIn(): boolean {
+    return this.isAuthenticated;
+  }
+   
  /* updateArticle(id: number, articleData: editarArticulo): Observable<articulo> {
     const url = `http://localhost:7777/api/articulos/${id}`;
   

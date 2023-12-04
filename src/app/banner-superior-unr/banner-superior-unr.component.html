@@ -1,23 +1,31 @@
 <body>
-    <div class="banner">
-        <div class="menu-button">
-            <button (click)="toggleMenu()">☰</button>
-        </div>
+    <!--No ha iniciado sesión-->
+    <div *ngIf="!estaAutenticado"   class="banner">
+        
         <div class="logo" (click)="restablecerFiltros()"></div>
         <div class="action-buttons">
-            <div class="action-button"(click)="articuloAleatorio()">
-                <span class="material-icons">
-                    shuffle</span>
-            </div>
-            <div *ngIf="esAdmin()" class="action-button" routerLink="./nueva_publicacion"><span class="material-icons">
-                post_add
-                </span></div>
-                <div class="action-button" id="perfil" routerLink="./perfil_usuario">Perfil</div>
+            
+           
             <div class="action-button" id="unirse" routerLink="./crear_cuenta">Unirse</div>
             <div class="action-button" id="iniciar-sesion" routerLink="./iniciar_sesion">Iniciar Sesión</div>
-            
         </div>
-    <br>
+    </div>
+
+    <!--Ya inició sesión-->
+    <div *ngIf="estaAutenticado" class="banner">
+        <div class="menu-button"><button (click)="toggleMenu()">☰</button> </div>
+
+        <div class="logo" (click)="restablecerFiltros()"></div>
+
+        <div class="action-buttons">
+            <div class="action-button"(click)="articuloAleatorio()"><span class="material-icons">shuffle</span></div>
+
+            <div *ngIf="esAdmin()" class="action-button" routerLink="./nueva_publicacion"><span class="material-icons">post_add</span></div>
+                
+            <div class="action-button" id="perfil" routerLink="./perfil_usuario">Perfil</div>
+            <div  (click)="cerrarSesion()" class="action-button" id="cerrar-sesion"><span class="material-icons">logout</span></div>
+        </div>
+        <br>
         <div [ngClass]="{'menu-open': isMenuOpen}" class="menu">
             
             <button id="cerrar" (click)="closeMenu()">x</button>
@@ -33,7 +41,6 @@
                 <div (click)="seleccionarCategoria(1)"><span>Música</span></div>
                 <div (click)="seleccionarCategoria(3)"><span>Varios</span></div>
             </div>
-            
         </div>
     </div>
 </body>

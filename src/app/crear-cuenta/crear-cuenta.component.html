@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    
-</head>
 <body>
     <div class="login-container">
         <button id ="cerrar" onclick="history.back()">x</button>
@@ -12,14 +7,14 @@
             
             <div class="form-group">
                 <label for="username">Usuario:</label>
-                <input type="text" id="username" name="username" required placeholder="Usuario">
+                <input type="text" [(ngModel)]="nuevoUsuario" id="username" name="username" required placeholder="Usuario">
             </div>
             <div class="form-group">
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required placeholder="Contraseña">
+                <input type="password" [(ngModel)]="nuevoPassword" id="password" name="password" required placeholder="Contraseña">
             </div>
            
-            <button type="submit" id="acceder">Crear cuenta</button>
+            <button (click)="crearCuenta()" id="acceder">Crear cuenta</button>
         </form>
         <p>o</p>
         <div class="social-buttons">
@@ -30,4 +25,4 @@
         <p>¿Ya tienes una cuenta en <b>Purgatorio</b>? <a href="#">Inicia sesión</a></p>
     </div>
 </body>
-</html>
+

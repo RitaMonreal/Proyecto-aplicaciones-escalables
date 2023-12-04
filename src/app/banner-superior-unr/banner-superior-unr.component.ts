@@ -17,9 +17,18 @@ export class BannerSuperiorUnrComponent {
     
   }
 
+  get estaAutenticado(): boolean {
+    return this.contenidoService.isLoggedIn;
+  }
+
   esAdmin(): boolean {
 
     return this.contenidoService.userRol === 'admin';
+  }
+
+  cerrarSesion(): void {
+    this.contenidoService.logout();
+    this.router.navigate(['/pagina_bienvenida']);
   }
   
   toggleMenu() {

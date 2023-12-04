@@ -13,7 +13,7 @@ export class IniciarSesionComponent {
   constructor(private contenidoService: ContenidoService, private router: Router) {}
 
   public iniciarSesion(){
-    this.contenidoService.crearUsuario(this.newUser).subscribe(
+    this.contenidoService.loginUsuario(this.newUser).subscribe(
       {
         next: (response: any) => {
           console.log(response);
