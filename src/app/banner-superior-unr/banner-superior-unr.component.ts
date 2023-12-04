@@ -31,7 +31,7 @@ export class BannerSuperiorUnrComponent {
 
   restablecerFiltros() {
     this.contenidoService.setCategoriaSeleccionada(null); // Restablecer la categoría seleccionada a null
-    this.router.navigate(['/']); // Navegar a la página principal
+    this.router.navigate(['/pagina_principal']); // Navegar a la página principal
   }
 
   public searchByTerm(): void{

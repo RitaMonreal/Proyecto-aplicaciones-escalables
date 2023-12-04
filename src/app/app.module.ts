@@ -15,6 +15,8 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FormularioEdicionComponent } from './formulario-edicion/formulario-edicion.component';
+import { PaginaBienvenidaComponent } from './pagina-bienvenida/pagina-bienvenida.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FormularioEdicionComponent } from './formulario-edicion/formulario-edic
     NotFoundComponent,
     FormularioNuevaPublicacionComponent,
     PerfilUsuarioComponent,
-    FormularioEdicionComponent
+    FormularioEdicionComponent,
+    PaginaBienvenidaComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { FormularioEdicionComponent } from './formulario-edicion/formulario-edic
     RouterModule,
     CommonModule,
     HttpClientModule,
-    FormsModule 
+    FormsModule,
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

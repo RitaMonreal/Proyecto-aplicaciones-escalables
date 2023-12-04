@@ -8,13 +8,15 @@ import { DetallesArticuloComponent } from './contenido/components/detalles-artic
 import { FormularioNuevaPublicacionComponent } from './formulario-nueva-publicacion/formulario-nueva-publicacion.component';
 import { FormularioEdicionComponent } from './formulario-edicion/formulario-edicion.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { PaginaBienvenidaComponent } from './pagina-bienvenida/pagina-bienvenida.component';
 
 const routes: Routes = [
   {path: "iniciar_sesion", component: IniciarSesionComponent},
   {path: "crear_cuenta", component: CrearCuentaComponent},
   { path: "pagina_principal", component: ContenidoPage },
   {path: "detalles-articulo/:id", component: DetallesArticuloComponent},
-  {path: "", redirectTo: "pagina_principal", pathMatch: "full"},
+  {path: "", redirectTo: "pagina_bienvenida", pathMatch: "full"},
+  {path: "pagina_bienvenida", component: PaginaBienvenidaComponent},
   {path: "nueva_publicacion", component: FormularioNuevaPublicacionComponent},
   {path: "editar_publicacion/:id", component: FormularioEdicionComponent},
   {path: "perfil_usuario", component: PerfilUsuarioComponent},
